@@ -1,0 +1,34 @@
+> x <- matrix(c(1,3,1,4),nrow=2,ncol=2)
+> y <- -0.5*x
+> z <- y
+> 
+> M <- makeCacheMatrix(x)
+> cacheSolve(M)
+[,1] [,2]
+[1,]    4   -1
+[2,]   -3    1
+> 
+> M$set(y)
+> cacheSolve(M)
+[,1] [,2]
+[1,]   -8    2
+[2,]    6   -2
+> 
+> M$set(z)
+> cacheSolve(M)
+getting cached data
+[,1] [,2]
+[1,]   -8    2
+[2,]    6   -2
+> 
+> cacheSolve(M)
+getting cached data
+[,1] [,2]
+[1,]   -8    2
+[2,]    6   -2
+> 
+> M$set(x)
+> cacheSolve(M)
+[,1] [,2]
+[1,]    4   -1
+[2,]   -3    1
